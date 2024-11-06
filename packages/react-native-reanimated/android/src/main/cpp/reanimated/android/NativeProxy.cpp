@@ -110,6 +110,8 @@ NativeProxy::~NativeProxy() {
   // has already been destroyed when AnimatedSensorModule's
   // destructor is ran
   nativeReanimatedModule_->cleanupSensors();
+
+  layoutAnimations_->cthis()->invalidate();
 }
 
 jni::local_ref<NativeProxy::jhybriddata> NativeProxy::initHybrid(
